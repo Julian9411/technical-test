@@ -1,11 +1,6 @@
 import { Button, TextField } from "@mui/material";
 import { useEffect, useState } from "react";
-import {
-  collection,
-  addDoc,
-  query,
-  onSnapshot,
-} from "firebase/firestore";
+import { collection, addDoc, query, onSnapshot } from "firebase/firestore";
 import { firestore } from "../../firebase";
 import { Header, ListComponent, IColumns } from "../../components";
 import { ModalComponent } from "../../components/Modal/Modal";
@@ -15,7 +10,6 @@ import {
   useDeletePost,
   useEditPost,
   useGetList,
-  useGetListByUser,
 } from "./List.hook";
 
 import "./style.css";
@@ -25,7 +19,9 @@ export const List = () => {
   const [open, setOpen] = useState(false);
   const [isEdit, setIsEdit] = useState(false);
   const [postIdSelected, setPostIdSelected] = useState<string | number>("0");
-  const [favoritesPost, setFavoritePost] = useState<Record<string, string>[]>([]);
+  const [favoritesPost, setFavoritePost] = useState<Record<string, string>[]>(
+    []
+  );
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
 
@@ -35,11 +31,6 @@ export const List = () => {
     isLoading: isLoadingPost,
     isFetched,
   } = useGetList();
-  const {
-    refetch: refetchGetUser,
-    data: userListData,
-    isLoading: isLoadingUser,
-  } = useGetListByUser(auth.id);
 
   const deletePost = useDeletePost();
   const editPost = useEditPost();
@@ -47,7 +38,6 @@ export const List = () => {
 
   useEffect(() => {
     refetchGetList();
-    refetchGetUser();
   }, [isFetched, open, editPost.isSuccess, editPost.isLoading]);
 
   useEffect(() => {
@@ -64,7 +54,7 @@ export const List = () => {
     getFavoritesPost();
   }, []);
 
-  console.log(favoritesPost)
+  console.log(favoritesPost);
 
   const columns: IColumns[] = [
     { id: "id", label: "ID", minWidth: 170 },
@@ -113,7 +103,7 @@ export const List = () => {
         id,
         title: filterById[0].title,
         body: filterById[0].body,
-        user: filterById[0].user
+        user: filterById[0].user,
       });
     } catch (err) {
       alert(err);
@@ -147,14 +137,16 @@ export const List = () => {
       <Header type="secondary" />
       <div className="containerList">
         <h1>Bienvenido {auth.displayName || auth.email || "Usuari@"}</h1>
-        <h2>Post List</h2>
-        <Button onClick={() => setOpen(true)}>Crear post</Button>
         {!isLoadingPost && (
-          <ListComponent columns={columns} rows={rows} actions={actions} />
-        )}
-        <h2>Favorite List</h2>
-        {!isLoadingUser && (
-          <ListComponent columns={columns} rows={favoritesPost} />
+          <>
+            <h2>Post List</h2>
+            <Button onClick={() => setOpen(true)}>Crear post</Button>
+
+            <ListComponent columns={columns} rows={rows} actions={actions} />
+
+            <h2>Favorite List</h2>
+            <ListComponent columns={columns} rows={favoritesPost} />
+          </>
         )}
       </div>
       <ModalComponent
