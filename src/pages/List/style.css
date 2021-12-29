@@ -1,0 +1,24 @@
+.containerList {
+  width: 80%;
+  margin: 150px auto 0;
+}
+
+.containerList h2, .containerList h1 {
+  color: var(--primary);
+}
+
+.containerList h1 {
+  text-align: center;
+}
+
+.contentModal {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 300px;
+}
+.contentModal h2 {
+  color: var(--primary);
+  text-align: center;
+  
+}

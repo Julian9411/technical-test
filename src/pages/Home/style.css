@@ -1,0 +1,45 @@
+.homeContainer { 
+  height: 100vh;
+}
+
+.hero {
+  width: 100%;
+  padding-top: 110px;
+  background-image: url('../../assets/img/globo.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 60%;
+  background-color: var(--bg);
+  display: flex;
+  align-items: center;
+}
+
+.textHero {
+  width: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 220px;
+}
+.textHero p {
+  color: var(--primary);
+  font-size: var(--sizeTitle);
+  margin-bottom: 5px;
+}
+.textHero img {
+  margin-left: 0;
+}
+
+@media only screen and (max-width: 600px) {
+  .textHero {
+    width: auto;
+    margin: auto;
+  }
+  .textHero p {
+    font-size: var(--sizeSubtitle);
+    margin-bottom: 5px;
+  }
+  .textHero img {
+    width: 300px;
+  }
+} 

@@ -1,0 +1,57 @@
+.container {
+  height: 100vh;
+  background-color: black;
+  background-image: url('../../assets/img/globo.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.containerLogin {
+  display: flex;
+  flex-direction: column;
+  width: 450px;
+  height: 100%;
+  align-content: center;
+  justify-content: center;
+  margin: auto;
+}
+
+.containerLogin .MuiTextField-root {
+  color: var(--primary)!important;
+  margin: 10px 0;
+}
+
+.containerLogin .MuiTextField-root label {
+  padding-left: 10px;
+  color: var(--green);
+  z-index: 3;
+}
+.containerLogin .MuiTextField-root input {
+  padding-left: 10px;
+  color: var(--primary)!important;
+}
+.containerLogin button {
+  color: var(--primary)!important;
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+.containerLogin button svg {
+  margin-right: 10px;
+}
+.loginContainerSocialNetworks {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media only screen and (max-width: 450px) {
+  .containerLogin {
+    width: 100%;
+  }
+  .loginContainerSocialNetworks {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+} 

@@ -1,0 +1,45 @@
+.containerBanner {
+  background-color: transparent;
+  background-image: url('../../../../assets/img/bgBanner.png');
+  background-position: initial;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 400px;
+  margin-top: -40px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.containerBanner img {
+  width: 446px;
+  height: 376px;
+  margin-top: -50px;
+  left: 160px;
+}
+
+.containerBanner .textBanner {
+  font-size: var(--sizeTitle);
+  text-align: right;
+  right: 0;
+  vertical-align: baseline;
+}
+
+@media only screen and (max-width: 750px) {
+  .containerBanner {
+    height: auto;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  .containerBanner img {
+    width: 300px;
+    height: 230px;
+    margin-top: -50px;
+    left: 160px;
+  }
+  .containerBanner .textBanner {
+    font-size: var(--sizeSubtitle);
+    text-align: center;
+  }
+} 

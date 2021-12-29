@@ -1,0 +1,42 @@
+.aboutUsContainer {
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.aboutUsContainer p {
+  color: var(--primary);
+  font-size: var(--sizeSubtitle);
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.aboutUsContainer span.gradient {
+  background: var(--gradientSecondary);
+  font-weight: bold;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.aboutUsContainer .textSecondary {
+  font-size: var(--sizeDescription);
+}
+
+.containerButtonsFooter {
+  display: flex;
+  align-items: center;
+}
+
+.iconLink {
+  margin-right: 20px;
+}
+
+.buttonLink {
+  font-weight: 500;
+  padding: 10px 30px;
+  border-radius: 20px;
+  background: var(--gradientSecondary);
+  color: var(--bg);
+  text-decoration: none;
+}

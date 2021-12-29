@@ -1,0 +1,111 @@
+.containerBenefits {
+  text-align: center;
+}
+.textBenefits { 
+  color: var(--primary);
+  font-size: var(--sizeDescription);
+}
+.textBenefits span { 
+  color: var(--bg);
+  background: var(--borderGradient);
+  font-size: var(--sizeSubtitle);
+  font-weight: 900;
+  padding: 0 10px;
+  text-shadow: 1px 1px 2px var(--bg);
+}
+
+.containerSlider {
+  width: 70%;
+  margin: 80px auto 0;
+}
+
+.containerSlide {
+  display: flex!important;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.containerIcon {
+  border-image: url(../../../../assets/img/borderIcon.png) 15 fill;
+  border-style: solid;
+  border-width: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 131px;
+  height: 131px;
+}
+
+.containerSlide p {
+ color: var(--primary);
+ font-size: var(--sizeText);
+ max-width: 131px;
+ margin-top: 40px;
+}
+
+.slick-slider {
+  display: flex!important;
+  align-items: center;
+}
+
+.arrowContainer {
+  position:relative;
+  width: 24px;
+  height: 24px;
+  padding: 5px;
+  border-radius: 50%;
+}
+
+.arrowContainerLeft {
+  transform: rotate(-180deg)
+}
+
+.arrowContainer::before {
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  border-radius:50%; 
+  padding:1px; 
+  background:var(--borderGradient);
+  -webkit-mask: 
+     linear-gradient(#fff 0 0) content-box, 
+     linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out; 
+  mask-composite: exclude; 
+}
+
+.arrowContainer:hover {
+  box-shadow: 0px 0px 5px 2px rgba(1, 255, 47, 0.5);
+}
+
+.arrow {
+  color: var(--primary);
+}
+
+.slick-dots li button::before {
+  color: var(--green)!important;
+}
+
+@media only screen and (max-width: 550px) {
+  .containerBenefits {
+    text-align: center;
+  }
+  .textBenefits { 
+    color: var(--primary);
+    font-size: var(--sizeDescription);
+  }
+  .textBenefits br { 
+    display: none;
+  }
+  .textBenefits span { 
+    font-size: var(--sizeDescription);
+  }
+  .containerSlider {
+    width: 90%;
+    margin: 80px auto 0;
+  }
+} 

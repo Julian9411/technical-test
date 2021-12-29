@@ -1,0 +1,14 @@
+footer {
+  height: 92px;
+  border-top: 1px solid #232323;
+  width: 80%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+footer img {
+  width: 137px;
+  height: 46px;
+}
