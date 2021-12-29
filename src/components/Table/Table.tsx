@@ -45,7 +45,6 @@ export const ListComponent: FC<ITable> = ({ rows, columns, actions }) => {
           <TableBody>
             {rows
               .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-              // eslint-disable-next-line @typescript-eslint/no-explicit-any
               .map((row: any, index: number) => {
                 return (
                   <TableRow

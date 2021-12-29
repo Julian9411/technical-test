@@ -6,7 +6,6 @@ import benefits from "./const";
 import "./style.css";
 
 export const Benefits = () => {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const sliderRef = useRef<any>(null);
 
   const settings = {

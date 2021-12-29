@@ -97,7 +97,6 @@ export const List = () => {
   };
 
   const createFavorites = async (id: string | number) => {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const filterById = rows.filter((row: any) => row.id === id);
     try {
       await addDoc(collection(firestore, "favorites"), {
